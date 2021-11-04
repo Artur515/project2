@@ -1,10 +1,10 @@
 import React from 'react';
 import {Layout} from 'antd';
-import CustomButton from "../ui/customButton/CustomButton";
+import CustomButton from "../ui/CustomButton";
 
+const {Sider, Content} = Layout
 
 const CustomLayout = (props) => {
-    const {Sider, Content} = Layout
 
     return (
         <Layout className='layout'>

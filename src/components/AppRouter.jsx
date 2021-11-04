@@ -4,7 +4,7 @@ import {privatRouter, publicRouter} from "../routes/routes";
 import {ENTRY_ROUTE} from "../constants";
 
 const AppRouter = () => {
-    const isLogin = false
+    const isLogin = true
 
     return (
         <Switch>
