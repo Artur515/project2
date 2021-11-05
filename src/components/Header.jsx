@@ -6,7 +6,9 @@ import {departmentList, statusList} from "../static";
 
 const Header = ({setDeleteModal}) => {
 
-    const path = '/appointments/:id'
+
+
+    const path = '/'
 
     return (
         <PageHeader className='header'>

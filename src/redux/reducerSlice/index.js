@@ -4,11 +4,15 @@ import {createSlice} from "@reduxjs/toolkit";
 const appointmentToolkitSlice = createSlice({
     name: 'Appointments',
     initialState: {
-        appointment: [],
         isAuth: false,
+        appointment: [],
         error: null
     },
     reducers: {
+
+        setAuthentication(state, action) {
+            state.isAuth = action.payload
+        },
         addNewAppointment(state, action) {
             state.appointment.push(...action.payload)
         }
@@ -18,5 +22,5 @@ const appointmentToolkitSlice = createSlice({
 
 export default appointmentToolkitSlice.reducer
 
-export const {addNewAppointment} = appointmentToolkitSlice.actions
+export const {setAuthentication, addNewAppointment} = appointmentToolkitSlice.actions
 
