@@ -2,7 +2,7 @@ import {APPOINTMENT_ID_DELETE_ROUTE, APPOINTMENT_ID_EDIT_ROUTE, APPOINTMENT_ID_R
 import AppointmentsTableList from "../components/AppointmentsTableList";
 import AppointmentsWithId from "../components/AppointmentsWithId";
 import AppointmentsEdit from "../components/AppointmentsEdit";
-import AppointmentsDeleteModal from "../components/AppointmentsDeleteModal";
+import AppointmentsDelete from "../components/AppointmentsDelete";
 
 export const publicRouter = [
     {
@@ -26,6 +26,6 @@ export const privatRouter = [
         Component: AppointmentsEdit
     }, {
         path: APPOINTMENT_ID_DELETE_ROUTE,
-        Component: AppointmentsDeleteModal
+        Component: AppointmentsDelete
     }
 ]

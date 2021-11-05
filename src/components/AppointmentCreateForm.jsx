@@ -9,7 +9,6 @@ const AppointmentCreateForm = (props) => {
     const newDepartmentList = [...departmentList].splice(1)
 
 
-
     const onFinish = (values) => {
         console.log('Success:', values);
     };
@@ -20,20 +19,20 @@ const AppointmentCreateForm = (props) => {
 
     return (
         <>
-            <Form style={{display: "flex", justifyContent: "space-between"}} name="basic"
+            <Form className='appointment_form' name="basic"
                   initialValues={{remember: true}}
                   labelCol={{span: 24}}
                   wrapperCol={{span: 24}}
                   onFinish={onFinish}
                   onFinishFailed={onFinishFailed}>
-                <div style={{width: "45%"}}>
+                <div className='appointment_form_left_side'>
 
                     <Form.Item label="First name" name="userName"
                                rules={[{required: true, message: 'Please input your username!'}]}>
                         <Input size='large'/>
                     </Form.Item>
 
-                    <div style={{marginBottom: 25, display: 'flex', justifyContent: "space-between"}}>
+                    <div className='appointment_form_left_side_date_picker'>
                         <Form.Item name="date-picker" label="Date" {...config}>
                             <DatePicker size='large'/>
                         </Form.Item>
@@ -48,10 +47,12 @@ const AppointmentCreateForm = (props) => {
                         <CustomSelect style={{margin: 0}} size='large' placeholder='Date confirmed'
                                       options={newDepartmentList}/>
                     </Form.Item>
+
                 </div>
 
 
-                <div style={{width: "45%"}}>
+                <div className='appointment_form_right_side'>
+
                     <Form.Item label="Second name" name="secondName"
                                rules={[{required: true, message: 'Please input your username!'}]}>
                         <Input size='large'/>
@@ -69,22 +70,14 @@ const AppointmentCreateForm = (props) => {
                                label="Notes" rules={[{required: true, message: 'Please input Intro'}]}>
                         <Input.TextArea size='large' showCount maxLength={1000}/>
                     </Form.Item>
+
                 </div>
 
             </Form>
 
-            <div style={{marginTop: 25, display: "flex", justifyContent: "flex-end"}}>{props.children}</div>
+            <div className='appointment_form_footer'>{props.children}</div>
         </>
     );
 };
 
 export default AppointmentCreateForm;
-
-
-// <Form.Item label="Success" hasFeedback validateStatus="success">
-//     <Input allowClear placeholder="with allowClear" />
-// </Form.Item>
-//
-// <Form.Item label="Warning" hasFeedback validateStatus="warning">
-//     <Input.Password placeholder="with input password" />
-// </Form.Item>

@@ -7,7 +7,7 @@ const {Column, ColumnGroup} = Table;
 const AppointmentsTableList = () => {
 
     return (
-        <Table rowKey="id" dataSource={data} className='content'>
+        <Table rowKey="id" dataSource={data} scroll={{ x: 400 }} className='content'>
             <ColumnGroup title="Patient name">
                 <Column title="First Name" dataIndex="firstName" key="firstName"/>
                 <Column title="Last Name" dataIndex="lastName" key="lastName"/>

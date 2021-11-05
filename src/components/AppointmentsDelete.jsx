@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AppointmentsDeleteModal = () => {
+const AppointmentsDelete = () => {
     return (
         <div>
             AppointmentsDelete
@@ -8,4 +8,4 @@ const AppointmentsDeleteModal = () => {
     );
 };
 
-export default AppointmentsDeleteModal;
+export default AppointmentsDelete;

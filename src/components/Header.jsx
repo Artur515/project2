@@ -4,8 +4,7 @@ import CustomButton from "../ui/CustomButton";
 import CustomSelect from "./CustomSelect";
 import {departmentList, statusList} from "../static";
 
-const Header = () => {
-
+const Header = ({setDeleteModal}) => {
 
     const path = '/appointments/:id'
 
@@ -20,7 +19,7 @@ const Header = () => {
                 <>
                     <CustomSelect placeholder={'Date confirmed'} value={statusList[1]} options={statusList}/>
                     <CustomButton className="headerBtn">Edit</CustomButton>
-                    <CustomButton className="headerBtn">Delete</CustomButton>
+                    <CustomButton onClick={() => setDeleteModal(true)} className="headerBtn">Delete</CustomButton>
                 </>
             }
 

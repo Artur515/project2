@@ -1,20 +1,19 @@
 import React from 'react';
 import Modal from "antd/es/modal/Modal";
-import AppointmentCreateForm from "./AppointmentCreateForm";
 
-const AppointmentsModal = ({modal, setModal}) => {
+const AppointmentsModal = ({state, setState, okText, title, ...props}) => {
 
     return (
         <Modal
-            title="Create an Appointment"
+            title={title}
             centered
             width={1000}
-            visible={modal}
-            okText="Create"
+            visible={state}
+            okText={okText}
             cancelText="Cancel"
             onOk={() => console.log('Create some')}
-            onCancel={() => setModal(false)}>
-            <AppointmentCreateForm/>
+            onCancel={() => setState(false)}>
+            {props.children}
         </Modal>
     );
 };

@@ -4,7 +4,7 @@ import {PlusCircleOutlined} from "@ant-design/icons";
 
 const CreateButton = (props) => {
     return (
-        <Button   {...props} style={{position:"absolute",top:40,left:200}} shape="circle" icon={<PlusCircleOutlined/>} size='large'>
+        <Button   {...props} style={{position:"absolute",top:40,left:60}} shape="circle" icon={<PlusCircleOutlined/>} size='large'>
             {props.children}
         </Button>);
 };
