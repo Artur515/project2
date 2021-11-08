@@ -1,12 +1,15 @@
-import {APPOINTMENT_ID_DELETE_ROUTE, APPOINTMENT_ID_EDIT_ROUTE, APPOINTMENT_ID_ROUTE, ENTRY_ROUTE} from "../constants";
+import {
+    appointmentsIdEditRoute,
+    appointmentsIdRoute,
+    entryRoute
+} from "../constants";
 import AppointmentsTableList from "../components/AppointmentsTableList";
 import AppointmentsWithId from "../components/AppointmentsWithId";
 import AppointmentsEdit from "../components/AppointmentsEdit";
-import AppointmentsDelete from "../components/AppointmentsDelete";
 
 export const publicRouter = [
     {
-        path: ENTRY_ROUTE,
+        path: entryRoute(),
         Component: AppointmentsTableList
     }
 ]
@@ -14,18 +17,11 @@ export const publicRouter = [
 
 export const privatRouter = [
     {
-        path: ENTRY_ROUTE,
-        Component: AppointmentsTableList
-    },
-    {
-        path: APPOINTMENT_ID_ROUTE,
+        path: appointmentsIdRoute(),
         Component: AppointmentsWithId
     },
     {
-        path: APPOINTMENT_ID_EDIT_ROUTE,
+        path: appointmentsIdEditRoute(),
         Component: AppointmentsEdit
-    }, {
-        path: APPOINTMENT_ID_DELETE_ROUTE,
-        Component: AppointmentsDelete
     }
 ]

@@ -2,7 +2,7 @@ import React from 'react';
 import {useGoogleLogout} from 'react-google-login';
 import CustomButton from "../../ui/CustomButton";
 import {useDispatch} from "react-redux";
-import {setAuthentication} from "../../redux/reducerSlice";
+import {setAuthentication, setError} from "../../redux/reducerSlice";
 
 const clientId = "58079689875-mk3ptqpcpsipqlmkv45dmk4nqf6paevo.apps.googleusercontent.com"
 
@@ -16,7 +16,8 @@ const Logout = () => {
     };
 
     const onFailure = () => {
-        console.log('Handle failure cases');
+        console.log('Handle failure cases')
+        dispatch(setError())
     };
 
     const {signOut} = useGoogleLogout({

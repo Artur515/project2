@@ -1,22 +1,21 @@
 import React from 'react';
 import {Redirect, Route, Switch} from "react-router-dom";
 import {privatRouter, publicRouter} from "../routes/routes";
-import {ENTRY_ROUTE} from "../constants";
 import {useSelector} from "react-redux";
+import {entryRoute} from "../constants";
 
 const AppRouter = () => {
     const isAuth = useSelector(state => state.appointmentReducer.isAuth)
 
+
     return (
         <Switch>
-            {!isAuth ?
-                publicRouter.map(({path, Component}) => <Route key={path} path={path} component={Component}
-                                                               exact={true}/>)
-                :
-                privatRouter.map(({path, Component}) => <Route key={path} path={path} component={Component}
-                                                               exact={true}/>)
-            }
-            <Redirect to={ENTRY_ROUTE}/>
+            {publicRouter.map(({path, Component}) => <Route key={path} path={path} component={Component}
+                                                            exact={true}/>)}
+            {isAuth &&
+            privatRouter.map(({path, Component}) => <Route key={path} path={path} component={Component}
+                                                           exact={true}/>)}
+            <Redirect to={entryRoute()}/>
         </Switch>
     );
 };

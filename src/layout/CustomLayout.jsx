@@ -1,8 +1,9 @@
 import React from 'react';
 import {Layout} from 'antd';
-import Login from "../api/google/Login";
+import Login from "../components/google/Login";
 import {useSelector} from "react-redux";
-import Logout from "../api/google/Logout";
+import Logout from "../components/google/Logout";
+
 const {Sider, Content} = Layout
 
 const CustomLayout = (props) => {
