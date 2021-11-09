@@ -1,11 +1,14 @@
 import {
+    appointmentsIdDeleteRoute,
     appointmentsIdEditRoute,
     appointmentsIdRoute,
     entryRoute
-} from "../constants";
-import AppointmentsTableList from "../components/AppointmentsTableList";
-import AppointmentsWithId from "../components/AppointmentsWithId";
-import AppointmentsEdit from "../components/AppointmentsEdit";
+} from "../constants/route";
+import AppointmentsTableList from "../pages/AppointmentsTableList";
+import AppointmentsWithDetails from "../pages/AppointmentsWithDetails";
+import AppointmentsEdit from "../pages/AppointmentsEdit";
+import AppointmentsDelete from "../pages/AppointmentsDelete";
+
 
 export const publicRouter = [
     {
@@ -18,10 +21,13 @@ export const publicRouter = [
 export const privatRouter = [
     {
         path: appointmentsIdRoute(),
-        Component: AppointmentsWithId
+        Component: AppointmentsWithDetails
     },
     {
         path: appointmentsIdEditRoute(),
         Component: AppointmentsEdit
+    }, {
+        path: appointmentsIdDeleteRoute(),
+        Component: AppointmentsDelete
     }
 ]

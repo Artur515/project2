@@ -1,7 +1,7 @@
 import React from 'react';
 import {Alert, Button} from "antd";
 import {useDispatch, useSelector} from "react-redux";
-import {setError} from "../redux/reducerSlice";
+import {setError} from "../redux/reducer";
 
 
 const ErrorPage = () => {
@@ -13,7 +13,7 @@ const ErrorPage = () => {
     }
 
     return (
-        <div style={{position: 'absolute', top: '35%', left: '40%', background: "#ececec"}}>
+        <div className='errorPage'>
             <Alert
                 message="Error Text"
                 showIcon
@@ -23,8 +23,7 @@ const ErrorPage = () => {
                     <Button onClick={handleDeleteError} size="large" danger>
                         Go back
                     </Button>
-                }
-            />
+                }/>
         </div>
     );
 };

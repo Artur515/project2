@@ -5,10 +5,10 @@ const appointmentToolkitSlice = createSlice({
     name: 'Appointments',
     initialState: {
         isAuth: localStorage.getItem('project_token'),
-        appointments: [],
+        appointments: null,
         appointmentWithId: null,
         isError: null,
-        isLoading: false
+        isLoading: false,
     },
     reducers: {
         setLoading(state, action) {
@@ -21,7 +21,7 @@ const appointmentToolkitSlice = createSlice({
             state.isError = action.payload
         },
         setAppointmentList(state, action) {
-            state.appointments.push(...action.payload)
+            state.appointments=action.payload
         },
         setAppointmentWithId(state, action) {
             state.appointmentWithId = action.payload

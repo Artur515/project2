@@ -1,4 +1,4 @@
-$colors: (headerBtn:#001529, authBtn:#ffffff);
+$colors: (headerBtn:#001529, authBtn:#ffffff, disableBtn:#626262);
 
 
 button {
@@ -28,6 +28,11 @@ button {
     left: 25px;
   }
 
+  &.disabled {
+    color: #626262;
+    margin: 0 5px;
+    cursor: default;
+  }
 
   &.headerBtn:hover, .headerBtn:focus {
     box-shadow: inset 0 0 0 2em var(--hover);

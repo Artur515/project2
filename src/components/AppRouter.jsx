@@ -2,7 +2,7 @@ import React from 'react';
 import {Redirect, Route, Switch} from "react-router-dom";
 import {privatRouter, publicRouter} from "../routes/routes";
 import {useSelector} from "react-redux";
-import {entryRoute} from "../constants";
+import {entryRoute} from "../constants/route";
 
 const AppRouter = () => {
     const isAuth = useSelector(state => state.appointmentReducer.isAuth)

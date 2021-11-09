@@ -1,12 +1,14 @@
 import React from 'react';
 import {useGoogleLogin} from "react-google-login";
-import CustomButton from "../../ui/CustomButton";
+import CustomButton from "../ui/CustomButton";
 import {useDispatch} from "react-redux";
-import {setAuthentication, setError} from "../../redux/reducerSlice";
+import {setAuthentication, setError} from "../../redux/reducer";
 
 
-const clientId = "58079689875-mk3ptqpcpsipqlmkv45dmk4nqf6paevo.apps.googleusercontent.com"
+// const clientId = "58079689875-mk3ptqpcpsipqlmkv45dmk4nqf6paevo.apps.googleusercontent.com"
 
+
+const clientId=process.env.REACT_APP_CLIENT_ID
 
 const Login = () => {
     const dispatch = useDispatch()

@@ -1,18 +1,23 @@
 import axios from "axios";
 
-const BASE_API = `http://localhost:3001/data`
+// const BASE_API = `http://localhost:3001/data`
+
+
+const instance = axios.create({
+    baseURL: `http://localhost:3001/data`,
+});
 
 
 export const getAllAppointments = () => {
-    return axios.get(BASE_API)
+    return instance.get('')
 }
 
 
 export const getAppointmentWithId = (id) => {
-    return axios.get(BASE_API + `/${id}`)
+    return instance.get(`/${id}`)
 }
 
 
 export const deleteAppointmentWithId = (id) => {
-    return axios.delete(BASE_API + `/${id}`)
+    return instance.delete(`/${id}`)
 }

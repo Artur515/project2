@@ -1,5 +1,5 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
-import appointmentToolkitSlice from '../redux/reducerSlice'
+import appointmentToolkitSlice from '../reducer'
 
 
 const rootReducer = combineReducers({

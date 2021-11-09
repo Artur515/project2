@@ -1,6 +1,6 @@
 import React from 'react';
 import {Form, Input, TimePicker, DatePicker} from "antd";
-import {departmentList} from "../static";
+import {departmentList} from "../constants/select";
 import CustomSelect from "./CustomSelect";
 
 

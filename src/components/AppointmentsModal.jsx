@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from "antd/es/modal/Modal";
 
-const AppointmentsModal = ({state, setState, okText, title, onClick, ...props}) => {
+const AppointmentsModal = ({state, setState, okText, title, onClick, onCancel, ...props}) => {
 
     return (
         <Modal
@@ -12,7 +12,7 @@ const AppointmentsModal = ({state, setState, okText, title, onClick, ...props}) 
             okText={okText}
             cancelText="Cancel"
             onOk={onClick}
-            onCancel={() => setState(false)}>
+            onCancel={onCancel}>
             {props.children}
         </Modal>
     );
