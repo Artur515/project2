@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import AppointmentsModal from "../components/AppointmentsModal";
 import AppointmentCardDetails from "../components/AppointmentCardDetails";
 import {setAppointmentWithId, setError, setLoading, setUpdatedAppointmentList} from "../redux/reducer";
@@ -44,9 +44,14 @@ const AppointmentsDelete = () => {
         } finally {
             setDeleteModal(false)
             dispatch(setLoading(false))
-            history.push(entryRoute())
         }
     }
+
+    useEffect(() => {
+        appointmentWithId === null && history.push(entryRoute())
+        // eslint-disable-next-line
+    }, [appointmentWithId])
+
 
     const handleCancel = () => {
         setDeleteModal(false)

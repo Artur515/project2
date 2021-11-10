@@ -4,22 +4,30 @@ import AppRouter from "./components/AppRouter";
 import AppointmentsModal from "./components/AppointmentsModal";
 import CreateButton from "./components/ui/CreateButton";
 import AppointmentCreateForm from "./components/AppointmentCreateForm";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import ErrorPage from "./pages/ErrorPage";
-import {useLocation} from "react-router-dom";
+import { useLocation} from "react-router-dom";
+import {setAppointmentWithId} from "./redux/reducer";
+import CustomBreadcrumb from "./components/CustomBreadcrumb";
 
 
 const App = () => {
     const {isAuth, isError} = useSelector(state => state.appointmentReducer)
     const [modal, setModal] = useState(false)
     const location = useLocation()
+    const dispatch = useDispatch()
 
     const createAppointment = () => {
-        console.log("hello create")
+        console.log("hello create new appointment")
     }
 
     const handleCancel = () => {
         setModal(false)
+    }
+
+    const handleCreateAppointment = () => {
+        setModal(true)
+        dispatch(setAppointmentWithId(null))
     }
 
     if (isError) {
@@ -30,7 +38,8 @@ const App = () => {
 
     return (
         <CustomLayout>
-            {isAuth && <CreateButton disabled={confirmPath} onClick={() => setModal(true)}/>}
+            {isAuth && <CreateButton disabled={confirmPath} onClick={handleCreateAppointment}/>}
+            <CustomBreadcrumb/>
             <AppointmentsModal
                 onClick={() => createAppointment()}
                 onCancel={handleCancel}

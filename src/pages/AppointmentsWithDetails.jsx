@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useHistory, useParams} from "react-router-dom";
-import {getAppointmentWithId} from "../api";
+import {changeAppointmentStatus, getAppointmentWithId} from "../api";
 import {useDispatch, useSelector} from "react-redux";
 import {setAppointmentWithId, setError, setLoading} from "../redux/reducer";
 import AppointmentCardDetails from "../components/AppointmentCardDetails";
@@ -22,6 +22,7 @@ const AppointmentsWithDetails = () => {
             return (
                 <>
                     Appointment date: <h2>{appointmentWithId?.date}</h2>
+                    Time: <h2>{appointmentWithId?.time}</h2>
                     Department: <h2>{appointmentWithId?.department}</h2>
                     Notes: <h3>{appointmentWithId?.notes}</h3>
                 </>)
@@ -32,6 +33,7 @@ const AppointmentsWithDetails = () => {
                 <>
                     Patient full name: <h2>{appointmentWithId?.firstName} {appointmentWithId?.lastName}</h2>
                     Contact number:<h2>{appointmentWithId?.contact}</h2>
+                    Status:<h2>{appointmentWithId?.status}</h2>
                 </>
             )
         }
@@ -64,11 +66,32 @@ const AppointmentsWithDetails = () => {
             history.push(appointmentsIdDeleteRoute(id))
         }
 
+        const changeAppointmentStatusApi = async (obj) => {
+            dispatch(setLoading(true))
+            try {
+                const {data} = await changeAppointmentStatus(obj)
+                dispatch(setAppointmentWithId(data))
+            } catch (e) {
+                dispatch(setError(e.message))
+            } finally {
+                dispatch(setLoading(false))
+            }
+        }
+
+        const handleChangeStatus = async (value) => {
+            const updateAppointmentId = {...appointmentWithId, status: value}
+            changeAppointmentStatusApi(updateAppointmentId)
+        }
+
 
         return (
             <>
                 <PageHeader className='header'>
-                    <CustomSelect placeholder={'Date confirmed'} value={statusList[1]} options={statusList}/>
+                    <CustomSelect
+                        placeholder={'Date confirmed'}
+                        onChange={handleChangeStatus}
+                        value={statusList.slice(1)}
+                        options={statusList.slice(1)}/>
                     <CustomButton className="headerBtn" onClick={() => handleEditAppointment(appointmentWithId.id)}>
                         Edit
                     </CustomButton>

@@ -21,3 +21,7 @@ export const getAppointmentWithId = (id) => {
 export const deleteAppointmentWithId = (id) => {
     return instance.delete(`/${id}`)
 }
+
+export const changeAppointmentStatus = (appointment) => {
+    return instance.put(`/${appointment.id}`, appointment)
+}
