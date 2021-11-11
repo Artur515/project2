@@ -3,11 +3,11 @@
     {
       "id": 1,
       "firstName": "John",
-      "lastName": "Green Wick",
+      "lastName": "Green",
       "date": "12/06/2021",
-      "time": " 9:00 ",
+      "time": " 11:00 ",
       "department": "Surgery",
-      "status": "Rejected",
+      "status": "Accepted",
       "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quo?",
       "contact": "800‑345‑9019"
     },
@@ -29,7 +29,7 @@
       "date": "12/06/2021",
       "time": " 12:00 ",
       "department": "Surgery",
-      "status": "Accepted",
+      "status": "Date confirmed",
       "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quo?",
       "contact": "800‑345‑9019"
     },

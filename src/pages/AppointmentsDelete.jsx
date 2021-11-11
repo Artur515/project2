@@ -6,31 +6,13 @@ import {deleteAppointmentWithId} from "../api";
 import {entryRoute} from "../constants/route";
 import {useDispatch, useSelector} from "react-redux";
 import {useHistory} from "react-router-dom";
+import CustomButton from "../components/ui/CustomButton";
 
 const AppointmentsDelete = () => {
     const {appointmentWithId} = useSelector(state => state.appointmentReducer)
     const [deleteModal, setDeleteModal] = useState(true)
     const dispatch = useDispatch()
     const history = useHistory()
-
-    //card details
-    const leftSide = () => {
-        return (
-            <>
-                Appointment date: <h2>{appointmentWithId?.date}</h2>
-                Department: <h2>{appointmentWithId?.department}</h2>
-                Notes: <h3>{appointmentWithId?.notes}</h3>
-            </>)
-    }
-    //card details
-    const rightSide = () => {
-        return (
-            <>
-                Patient full name: <h2>{appointmentWithId?.firstName} {appointmentWithId?.lastName}</h2>
-                Contact number:<h2>{appointmentWithId?.contact}</h2>
-            </>
-        )
-    }
 
 
     const deleteAppointmentsWithIdApi = async (id) => {
@@ -63,18 +45,19 @@ const AppointmentsDelete = () => {
         <div style={{padding: "106px 0px"}}>
             {deleteModal &&
             <AppointmentsModal
-                onClick={() => deleteAppointmentsWithIdApi(appointmentWithId.id)}
                 onCancel={handleCancel}
                 state={deleteModal}
-                setState={setDeleteModal}
-                okText='Delete'
+                footer={[<CustomButton onClick={handleCancel} key='cancel' className="headerBtn edit">
+                    Cancel
+                </CustomButton>,
+                    <CustomButton onClick={() => deleteAppointmentsWithIdApi(appointmentWithId.id)} key='delete'
+                                  className="headerBtn">
+                        Delete
+                    </CustomButton>]}
                 title='Delete Appointment'>
                 Are you sure to delete this appointment?
             </AppointmentsModal>}
-            <div className='cards_appointment_content'>
-                <AppointmentCardDetails appointmentWithId={appointmentWithId}>{leftSide()}</AppointmentCardDetails>
-                <AppointmentCardDetails appointmentWithId={appointmentWithId}>{rightSide()}</AppointmentCardDetails>
-            </div>
+            <AppointmentCardDetails/>
         </div>
     );
 };

@@ -6,10 +6,12 @@ import {useSelector} from "react-redux";
 import moment from "moment";
 
 
+
 const AppointmentCreateForm = (props) => {
     const {appointmentWithId} = useSelector(state => state.appointmentReducer)
     const config = {rules: [{type: 'object', required: true, message: 'Please select time!'}]};
     const newDepartmentList = [...departmentList].splice(1)
+
 
     const initValues = {
         firstName: appointmentWithId?.firstName || '',
@@ -74,23 +76,20 @@ const AppointmentCreateForm = (props) => {
                     </Form.Item>
 
                     <Form.Item>
-                        <Form.Item name="contact" label="Phone Number"
-                                   labelCol={{span: 24}}
+                        <Form.Item name="contact" label="Phone Number" labelCol={{span: 24}}
                                    rules={[{required: true, message: 'Please input your phone number!'}]}>
                             <Input size='large'/>
                         </Form.Item>
                     </Form.Item>
 
-                    <Form.Item name="notes" labelCol={{span: 24}}
-                               label="Notes" rules={[{required: true, message: 'Please input Intro'}]}>
+                    <Form.Item name="notes" labelCol={{span: 24}} label="Notes"
+                               rules={[{required: true, message: 'Please input Intro'}]}>
                         <Input.TextArea size='large' showCount maxLength={1000}/>
                     </Form.Item>
 
                 </div>
-
+                <div className='appointment_form_footer'>{props.children}</div>
             </Form>
-
-            <div className='appointment_form_footer'>{props.children}</div>
         </>
     );
 };

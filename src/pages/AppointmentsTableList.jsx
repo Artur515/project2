@@ -9,6 +9,7 @@ import {departmentList, statusList} from "../constants/select";
 import {setAppointmentList, setAuthentication, setError, setLoading} from "../redux/reducer";
 import {getAllAppointments} from "../api";
 
+
 const {Column, ColumnGroup} = Table;
 
 const AppointmentsTableList = () => {
@@ -18,6 +19,7 @@ const AppointmentsTableList = () => {
     const [selectedStatus, setSelectedStatus] = useState('All')
     const history = useHistory()
     const dispatch = useDispatch()
+
 
     const getAllAppointmentsApi = async () => {
         dispatch(setLoading(true))
@@ -41,6 +43,7 @@ const AppointmentsTableList = () => {
         setSelectedStatus(value)
     }
 
+    //for watching selects
     useEffect(() => {
         let result = appointments
         if (selectedDepartment !== 'All') {
@@ -90,7 +93,7 @@ const AppointmentsTableList = () => {
                     }
                 };
             }}
-                   rowClassName={(index) => index && 'cursor'}
+                   rowClassName={(index) => index && isAuth && 'cursor'}
                    rowKey="id" dataSource={selected} scroll={{x: 400}} className='content'>
                 <ColumnGroup title="Patient name">
                     <Column title="First Name" dataIndex="firstName" key="firstName"/>

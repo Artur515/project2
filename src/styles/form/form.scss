@@ -1,23 +1,30 @@
 .appointment_form {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   &_left_side {
-    width: 45%;
+    min-width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     &_date_picker {
-      margin-bottom: 25px;
       display: flex;
       justify-content: space-between;
     }
   }
 
   &_right_side {
-    width: 45%;
+    min-width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
-  &_footer{
-    margin-top: 25px;
+
+  &_footer {
     display: flex;
     justify-content: flex-end;
+    width: 100%;
   }
 }

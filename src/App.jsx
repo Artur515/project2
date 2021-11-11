@@ -6,9 +6,11 @@ import CreateButton from "./components/ui/CreateButton";
 import AppointmentCreateForm from "./components/AppointmentCreateForm";
 import {useDispatch, useSelector} from "react-redux";
 import ErrorPage from "./pages/ErrorPage";
-import { useLocation} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 import {setAppointmentWithId} from "./redux/reducer";
 import CustomBreadcrumb from "./components/CustomBreadcrumb";
+import CustomButton from "./components/ui/CustomButton";
+import FormHookForm from "./components/ReactHookFormValidationPage/FormHookForm";
 
 
 const App = () => {
@@ -17,17 +19,14 @@ const App = () => {
     const location = useLocation()
     const dispatch = useDispatch()
 
-    const createAppointment = () => {
-        console.log("hello create new appointment")
-    }
 
     const handleCancel = () => {
         setModal(false)
     }
 
     const handleCreateAppointment = () => {
-        setModal(true)
         dispatch(setAppointmentWithId(null))
+        setModal(true)
     }
 
     if (isError) {
@@ -38,16 +37,18 @@ const App = () => {
 
     return (
         <CustomLayout>
+            {/*<FormHookForm/>*/}
             {isAuth && <CreateButton disabled={confirmPath} onClick={handleCreateAppointment}/>}
             <CustomBreadcrumb/>
             <AppointmentsModal
-                onClick={() => createAppointment()}
                 onCancel={handleCancel}
+                footer={null}
                 state={modal}
                 setState={setModal}
-                okText='Create'
                 title='Create an Appointment'>
-                <AppointmentCreateForm/>
+                <AppointmentCreateForm>
+                    <CustomButton className="headerBtn">Create</CustomButton>
+                </AppointmentCreateForm>
             </AppointmentsModal>
             <AppRouter/>
         </CustomLayout>
