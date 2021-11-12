@@ -18,7 +18,6 @@ const AppointmentsWithDetails = () => {
         const history = useHistory()
 
 
-
         const getAppointmentWithIdApi = async (id) => {
             dispatch(setLoading(true))
             try {
@@ -81,8 +80,6 @@ const AppointmentsWithDetails = () => {
                 </PageHeader>
                 <AppointmentCardDetails/>
             </>
-
-
         );
     }
 ;

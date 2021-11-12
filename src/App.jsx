@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import CustomLayout from "./layout/CustomLayout";
-import AppRouter from "./components/AppRouter";
+import AppRouter from "./routes/AppRouter";
 import AppointmentsModal from "./components/AppointmentsModal";
 import CreateButton from "./components/ui/CreateButton";
 import AppointmentCreateForm from "./components/AppointmentCreateForm";
@@ -11,6 +11,7 @@ import {setAppointmentWithId} from "./redux/reducer";
 import CustomBreadcrumb from "./components/CustomBreadcrumb";
 import CustomButton from "./components/ui/CustomButton";
 import FormHookForm from "./components/ReactHookFormValidationPage/FormHookForm";
+// import FormHookForm from "./components/ReactHookFormValidationPage/FormHookForm";
 
 
 const App = () => {

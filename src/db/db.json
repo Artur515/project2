@@ -7,9 +7,9 @@
       "date": "12/06/2021",
       "time": " 11:00 ",
       "department": "Surgery",
-      "status": "Accepted",
+      "status": "Rejected",
       "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quo?",
-      "contact": "800‑345‑9019"
+      "contact": "8003459019"
     },
     {
       "id": 2,
@@ -20,7 +20,7 @@
       "department": "Surgery",
       "status": "Accepted",
       "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quo?",
-      "contact": "800‑345‑9019"
+      "contact": "8003459019"
     },
     {
       "id": 3,
@@ -29,9 +29,9 @@
       "date": "12/06/2021",
       "time": " 12:00 ",
       "department": "Surgery",
-      "status": "Date confirmed",
+      "status": "Active",
       "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quo?",
-      "contact": "800‑345‑9019"
+      "contact": "8003459019"
     },
     {
       "id": 4,
@@ -42,7 +42,7 @@
       "department": "Orthopedics",
       "status": "Active",
       "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quo?",
-      "contact": "800‑345‑9019"
+      "contact": "8003459019"
     },
     {
       "id": 5,
@@ -53,7 +53,7 @@
       "department": "Orthopedics",
       "status": "Rejected",
       "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quo?",
-      "contact": "800‑345‑9019"
+      "contact": "8003459019"
     },
     {
       "id": 6,
@@ -64,7 +64,7 @@
       "department": "Cardiology",
       "status": "Active",
       "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quo?",
-      "contact": "800‑345‑9019"
+      "contact": "8003459019"
     },
     {
       "id": 7,
@@ -75,7 +75,7 @@
       "department": "Surgery",
       "status": "Accepted",
       "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quo?",
-      "contact": "800‑345‑9019"
+      "contact": "8003459019"
     },
     {
       "id": 8,
@@ -86,7 +86,7 @@
       "department": "Anesthetics",
       "status": "Rejected",
       "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quo?",
-      "contact": "800‑345‑9019"
+      "contact": "8003459019"
     },
     {
       "id": 9,
@@ -97,7 +97,7 @@
       "department": "Orthopedics",
       "status": "Active",
       "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quo?",
-      "contact": "800‑345‑9019"
+      "contact": "8003459019"
     },
     {
       "id": 10,
@@ -108,7 +108,7 @@
       "department": "Orthopedics",
       "status": "Rejected",
       "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quo?",
-      "contact": "800‑345‑9019"
+      "contact": "8003459019"
     },
     {
       "id": 11,
@@ -119,7 +119,7 @@
       "department": "Orthopedics",
       "status": "Rejected",
       "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quo?",
-      "contact": "800‑345‑9019"
+      "contact": "8003459019"
     },
     {
       "id": 12,
@@ -130,7 +130,7 @@
       "department": "Orthopedics",
       "status": "Rejected",
       "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quo?",
-      "contact": "800‑345‑9019"
+      "contact": "8003459019"
     },
     {
       "id": 13,
@@ -141,7 +141,7 @@
       "department": "Orthopedics",
       "status": "Rejected",
       "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quo?",
-      "contact": "800‑345‑9019"
+      "contact": "8003459019"
     }
   ]
 }

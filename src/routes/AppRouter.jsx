@@ -1,6 +1,6 @@
 import React from 'react';
 import {Redirect, Route, Switch} from "react-router-dom";
-import {privatRouter, publicRouter} from "../routes/routes";
+import {privatRouter, publicRouter} from "./routes";
 import {useSelector} from "react-redux";
 import {entryRoute} from "../constants/route";
 
