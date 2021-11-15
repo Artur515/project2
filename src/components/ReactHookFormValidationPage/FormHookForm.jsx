@@ -13,7 +13,7 @@ import {validation} from "../../validation";
 import Text from "antd/es/typography/Text";
 
 
-const FormHookForm = () => {
+const FormHookForm = (props) => {
     const {appointmentWithId} = useSelector(state => state.appointmentReducer)
     const {control, handleSubmit, formState: {errors}, setValue} = useForm();
     const newDepartmentList = [...departmentList].splice(1)
@@ -29,13 +29,14 @@ const FormHookForm = () => {
 
 
     useEffect(() => {
-        setValue("firstName", appointmentWithId?.firstName || '')
-        setValue("lastName", appointmentWithId?.lastName || '')
-        setValue('date', appointmentWithId && moment(appointmentWithId?.date, "YYYY-MM-DD") || '')
-        setValue('time', appointmentWithId && moment(appointmentWithId?.time, 'hh:mm') || '')
-        setValue("contact", appointmentWithId?.contact || '')
-        setValue("departments", appointmentWithId?.department || '')
-        setValue("notes", appointmentWithId?.notes || '')
+        setValue("firstName", appointmentWithId?.firstName)
+        setValue("lastName", appointmentWithId?.lastName)
+        setValue('date', appointmentWithId && moment(appointmentWithId?.date, "YYYY-MM-DD"))
+        setValue('time', appointmentWithId && moment(appointmentWithId?.time, 'hh:mm'))
+        setValue("contact", appointmentWithId?.contact)
+        setValue("departments", appointmentWithId?.department)
+        setValue("notes", appointmentWithId?.notes)
+// eslint-disable-next-line
     }, [])
 
 

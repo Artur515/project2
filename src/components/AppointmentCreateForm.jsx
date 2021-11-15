@@ -7,8 +7,8 @@ import moment from "moment";
 import {validationAntd} from "../validation";
 import MaskedInput from "antd-mask-input";
 import {setAppointmentList, setAppointmentWithId, setError, setLoading} from "../redux/reducer";
-import {addNewAppointment, changeAppointmentStatus, editAppointment, getAllAppointments} from "../api";
-import {Redirect, useHistory} from "react-router-dom";
+import {addNewAppointment, editAppointment} from "../api";
+import {useHistory} from "react-router-dom";
 import {entryRoute} from "../constants/route";
 
 

@@ -66,6 +66,7 @@ const AppointmentsTableList = () => {
         if (token) {
             dispatch(setAuthentication(true))
         }
+// eslint-disable-next-line
     }, [])
 
 
