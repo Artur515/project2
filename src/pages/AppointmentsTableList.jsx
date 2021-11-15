@@ -66,9 +66,13 @@ const AppointmentsTableList = () => {
         if (token) {
             dispatch(setAuthentication(true))
         }
+    }, [])
+
+
+    useEffect(() => {
         getAllAppointmentsApi()
         // eslint-disable-next-line
-    }, [])
+    }, [appointments.length])
 
 
     if (isLoading) {

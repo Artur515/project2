@@ -5,7 +5,7 @@ const appointmentToolkitSlice = createSlice({
     name: 'Appointments',
     initialState: {
         isAuth: localStorage.getItem('project_token'),
-        appointments: null,
+        appointments: [],
         appointmentWithId: null,
         isError: null,
         isLoading: false,

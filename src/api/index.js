@@ -1,7 +1,5 @@
 import axios from "axios";
 
-// const BASE_API = `http://localhost:3001/data`
-
 
 const instance = axios.create({
     baseURL: `http://localhost:3001/data`,
@@ -24,4 +22,13 @@ export const deleteAppointmentWithId = (id) => {
 
 export const changeAppointmentStatus = (appointment) => {
     return instance.put(`/${appointment.id}`, appointment)
+}
+
+
+export const addNewAppointment = (appointmentData) => {
+    return instance.post('', appointmentData)
+}
+
+export const editAppointment = (id, appointmentData) => {
+    return instance.patch(`/${id}`, appointmentData)
 }

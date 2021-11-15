@@ -7,6 +7,7 @@ const gridStyle = {width: 550, textAlign: 'center', minHeight: '50vh'};
 
 const AppointmentCardDetails = () => {
     const {appointmentWithId} = useSelector(state => state.appointmentReducer)
+
     //card details
     const leftSide = () => {
         return (

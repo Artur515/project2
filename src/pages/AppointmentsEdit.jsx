@@ -15,9 +15,10 @@ const AppointmentsEdit = () => {
     return (
         <div className='edit_wrapper'>
             <AppointmentCreateForm>
-                <CustomButton className="headerBtn">
-                    Edit
-                </CustomButton>
+                {disabled =>
+                    (<CustomButton disabled={disabled} className={`headerBtn ${disabled && 'disabled'}`}>
+                        Edit
+                    </CustomButton>)}
             </AppointmentCreateForm>
             <CustomButton onClick={handleGoBack} className="headerBtn edit_wrapper_button">
                 Cancel

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useForm, Controller} from "react-hook-form";
 import {Input, Select} from "antd";
 import {departmentList} from "../../constants/select";
@@ -22,23 +22,22 @@ const FormHookForm = () => {
     const onSubmit = (data) => {
         const newData = {
             ...data, date: moment(data.date._d).format("YYYY-MM-DD"),
-            time: moment(data.time._d).format("HH:mm"), status: ''
+            time: moment(data.time._d).format("HH:mm"), status: 'Active'
         }
         console.log('Sending data', newData)
     };
 
 
-    const flag = true
+    useEffect(() => {
+        setValue("firstName", appointmentWithId?.firstName || '')
+        setValue("lastName", appointmentWithId?.lastName || '')
+        setValue('date', appointmentWithId && moment(appointmentWithId?.date, "YYYY-MM-DD") || '')
+        setValue('time', appointmentWithId && moment(appointmentWithId?.time, 'hh:mm') || '')
+        setValue("contact", appointmentWithId?.contact || '')
+        setValue("departments", appointmentWithId?.department || '')
+        setValue("notes", appointmentWithId?.notes || '')
+    }, [])
 
-    if (flag) {
-        setValue("firstName", appointmentWithId?.firstName)
-        setValue("lastName", appointmentWithId?.lastName)
-        setValue('date', appointmentWithId && moment(appointmentWithId?.date, 'MM/DD/YYYY'))
-        setValue('time', appointmentWithId && moment(appointmentWithId?.time, 'hh:mm'))
-        setValue("contact", appointmentWithId?.contact)
-        setValue("departments", appointmentWithId?.department)
-        setValue("notes", appointmentWithId?.notes)
-    }
 
     return (<form style={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <Row gutter={[24, 100]}>

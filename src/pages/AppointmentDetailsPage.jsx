@@ -11,7 +11,7 @@ import {statusList} from "../constants/select";
 import CustomButton from "../components/ui/CustomButton";
 
 
-const AppointmentsWithDetails = () => {
+const AppointmentDetailsPage = () => {
         const {appointmentWithId} = useSelector(state => state.appointmentReducer)
         const dispatch = useDispatch()
         const params = useParams()
@@ -59,7 +59,7 @@ const AppointmentsWithDetails = () => {
 
         const handleChangeStatus = async (value) => {
             const updateAppointmentId = {...appointmentWithId, status: value}
-            changeAppointmentStatusApi(updateAppointmentId)
+            await changeAppointmentStatusApi(updateAppointmentId)
         }
 
 
@@ -84,4 +84,4 @@ const AppointmentsWithDetails = () => {
     }
 ;
 
-export default AppointmentsWithDetails;
+export default AppointmentDetailsPage;
