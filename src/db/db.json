@@ -15,8 +15,8 @@
       "id": 3,
       "firstName": "John",
       "lastName": "Green",
-      "date": "12/06/2021",
-      "time": " 12:00 ",
+      "date": "12-06-2021",
+      "time": "12:00",
       "department": "Surgery",
       "status": "Active",
       "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quo?",
@@ -73,7 +73,7 @@
       "date": "10/05/2021",
       "time": " 17:00",
       "department": "Anesthetics",
-      "status": "Rejected",
+      "status": "Date confirmed",
       "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, quo?",
       "contact": "8003459019"
     },
@@ -138,10 +138,21 @@
       "time": "13:09",
       "department": "Cardiology",
       "lastName": "Bloom",
-      "contact": "(555)-555-5555",
+      "contact": "(123)-456-7889",
       "notes": "Common champ",
-      "status": "Active",
+      "status": "Date confirmed",
       "id": 14
+    },
+    {
+      "firstName": "David",
+      "date": "18-11-2021",
+      "time": "11:48",
+      "department": "Orthopedics",
+      "lastName": "Guetta",
+      "contact": "(555)-555-5555",
+      "notes": "Watch him",
+      "status": "Active",
+      "id": 15
     }
   ]
 }
