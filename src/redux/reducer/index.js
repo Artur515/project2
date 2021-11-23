@@ -21,14 +21,11 @@ const appointmentToolkitSlice = createSlice({
             state.isError = action.payload
         },
         setAppointmentList(state, action) {
-            state.appointments=action.payload
+            state.appointments = action.payload
         },
         setAppointmentWithId(state, action) {
             state.appointmentWithId = action.payload
         },
-        setUpdatedAppointmentList(state, action) {
-            state.appointments = state.appointments.filter((appointment) => appointment.id !== action.payload)
-        }
     }
 })
 
@@ -41,6 +38,6 @@ export const {
     setLoading,
     setAppointmentWithId,
     setError,
-    setUpdatedAppointmentList
 } = appointmentToolkitSlice.actions
+
 

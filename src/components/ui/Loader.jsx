@@ -2,8 +2,8 @@ import React from 'react';
 
 
 
-const Loader = (props) => {
-    const word = props.props.split('').reverse()
+const Loader = (title) => {
+    const word = title.title.split('').reverse()
 
     return (
         <div className='loader'>

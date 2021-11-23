@@ -10,7 +10,6 @@ import {useLocation} from "react-router-dom";
 import {setAppointmentWithId} from "./redux/reducer";
 import CustomBreadcrumb from "./components/CustomBreadcrumb";
 import CustomButton from "./components/ui/CustomButton";
-// import FormHookForm from "./components/ReactHookFormValidationPage/FormHookForm";
 
 
 const App = () => {
@@ -19,6 +18,15 @@ const App = () => {
     const location = useLocation()
     const dispatch = useDispatch()
 
+
+//     useEffect(() => {
+//         const token = localStorage.getItem('project_token')
+//         if (token) {
+//             dispatch(setAuthentication(true))
+//         }
+// // eslint-disable-next-line
+//     }, [])
+//
 
     const handleCancel = () => {
         setModal(false)

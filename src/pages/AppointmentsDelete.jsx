@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import AppointmentsModal from "../components/AppointmentsModal";
 import AppointmentCardDetails from "../components/AppointmentCardDetails";
-import {setAppointmentWithId, setError, setLoading, setUpdatedAppointmentList} from "../redux/reducer";
+import {setAppointmentWithId, setError, setLoading} from "../redux/reducer";
 import {deleteAppointmentWithId} from "../api";
 import {entryRoute} from "../constants/route";
 import {useDispatch, useSelector} from "react-redux";
@@ -19,7 +19,6 @@ const AppointmentsDelete = () => {
         dispatch(setLoading(true))
         try {
             await deleteAppointmentWithId(id)
-            dispatch(setUpdatedAppointmentList(id))
             dispatch(setAppointmentWithId(null))
         } catch (error) {
             dispatch(setError(error))

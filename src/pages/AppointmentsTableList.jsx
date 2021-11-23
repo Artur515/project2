@@ -6,7 +6,7 @@ import {useHistory} from "react-router-dom";
 import {appointmentsIdRoute} from "../constants/route";
 import CustomSelect from "../components/CustomSelect";
 import {departmentList, statusList} from "../constants/select";
-import {setAppointmentList, setAuthentication, setError, setLoading} from "../redux/reducer";
+import {setAppointmentList, setError, setLoading} from "../redux/reducer";
 import {getAllAppointments} from "../api";
 
 
@@ -19,6 +19,7 @@ const AppointmentsTableList = () => {
     const [selectedStatus, setSelectedStatus] = useState('All')
     const history = useHistory()
     const dispatch = useDispatch()
+
 
 
     const getAllAppointmentsApi = async () => {
@@ -62,22 +63,13 @@ const AppointmentsTableList = () => {
 
 
     useEffect(() => {
-        const token = localStorage.getItem('project_token')
-        if (token) {
-            dispatch(setAuthentication(true))
-        }
-// eslint-disable-next-line
-    }, [])
-
-
-    useEffect(() => {
         getAllAppointmentsApi()
         // eslint-disable-next-line
     }, [appointments.length])
 
 
     if (isLoading) {
-        return <Loader props={"Loading"}/>
+        return <Loader title={"Loading"}/>
     }
 
 

@@ -39,7 +39,7 @@ const AppointmentCreateForm = (props) => {
             time: moment(values.time._d).format("HH:mm"),
             status: appointmentWithId?.status || 'Active'
         }
-        console.log('Sending data', data)
+        // console.log('Sending data', data)
         appointmentWithId ? editAppointmentApi(appointmentWithId.id, data) : createAppointmentApi(data)
     };
 

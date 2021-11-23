@@ -28,15 +28,12 @@ const AppointmentCardDetails = () => {
             </>
         )
     }
-    // if(!appointmentWithId){
-    //     return <Loader props={"Wait..."}/>
-    // }
 
     return (
         <div className='cards_appointment_content'>
             <Card.Grid style={gridStyle}>
                 <Card className='cards_appointment_content_card' type="inner" title="General information">
-                    {appointmentWithId === null ? <Loader props={"Wait."}/> :
+                    {appointmentWithId === null ? <Loader title={"Wait."}/> :
                         <>
                             {leftSide()}
                         </>}
@@ -44,7 +41,7 @@ const AppointmentCardDetails = () => {
             </Card.Grid>
             <Card.Grid style={gridStyle}>
                 <Card className='cards_appointment_content_card' type="inner" title="General information">
-                    {appointmentWithId === null ? <Loader props={"Wait."}/> :
+                    {appointmentWithId === null ? <Loader title={"Wait."}/> :
                         <>
                             {rightSide()}
                         </>}
